@@ -20,12 +20,12 @@ final class Version20230710175140 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE file ADD file_name VARCHAR(255) DEFAULT NULL');
+        $this->addSql('ALTER TABLE document ADD document_name VARCHAR(255) DEFAULT NULL');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE file DROP file_name');
+        $this->addSql('ALTER TABLE document DROP document_name');
     }
 }

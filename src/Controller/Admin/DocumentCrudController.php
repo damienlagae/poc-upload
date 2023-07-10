@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
-use App\Entity\File;
+use App\Entity\Document;
 use EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
@@ -12,11 +12,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
 use Vich\UploaderBundle\Form\Type\VichFileType;
 
-class FileCrudController extends AbstractCrudController
+class DocumentCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return File::class;
+        return Document::class;
     }
 
     /**
@@ -27,8 +27,8 @@ class FileCrudController extends AbstractCrudController
         return [
             IdField::new('id', '#')->hideOnForm(),
             TextField::new('name', 'Name'),
-            TextField::new('fileFile', 'File')->setFormType(VichFileType::class)->onlyOnForms(),
-            UrlField::new('filePath', 'File path')->hideOnForm(),
+            TextField::new('documentFile', 'Document')->setFormType(VichFileType::class)->onlyOnForms(),
+            UrlField::new('documentPath', 'Document path')->hideOnForm(),
         ];
     }
 }
