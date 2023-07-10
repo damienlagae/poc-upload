@@ -21,7 +21,7 @@ class File
     private string $name;
 
     #[Vich\UploadableField(mapping: 'file', fileNameProperty: 'fileName')]
-    private ?\Symfony\Component\HttpFoundation\File\File $fileFile;
+    private ?\Symfony\Component\HttpFoundation\File\File $fileFile = null;
 
     #[ORM\Column(type: 'string', nullable: true)]
     private ?string $fileName = null;
