@@ -65,3 +65,15 @@ services:
     environment:
       REDIS_1_HOST: redis
       REDIS_1_NAME: Docker
+
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    hostname: azurite
+    restart: always
+    command: "azurite --blobHost 0.0.0.0"
+    volumes:
+      - ./docker/azurite/data:/data
+    ports:
+      - "10000:10000"
+      - "10001:10001"
+      - "10002:10002"
