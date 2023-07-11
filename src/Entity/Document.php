@@ -67,6 +67,6 @@ class Document
 
     public function getDocumentPath(): ?string
     {
-        return 'documents/' . $this->getDocumentName();
+        return '/uploads/documents/' . $this->getDocumentName();
     }
 }

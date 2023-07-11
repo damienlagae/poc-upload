@@ -25,10 +25,16 @@ class PictureCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id', '#')->hideOnForm(),
+            IdField::new('id', '#')
+                ->hideOnForm(),
             TextField::new('name', 'Name'),
-            TextField::new('pictureFile', 'File')->setFormType(VichImageType::class)->onlyOnForms(),
-            ImageField::new('pictureName', 'Picture')->setBasePath('/pictures')->hideOnForm(),
+            TextField::new('pictureFile', 'File')
+                ->setFormType(VichImageType::class)
+                ->onlyOnForms(),
+            ImageField::new('pictureName', 'Picture')
+                ->setFormType(VichImageType::class)
+                ->setBasePath('/uploads/pictures')
+                ->hideOnForm(),
         ];
     }
 }

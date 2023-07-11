@@ -64,9 +64,4 @@ class Picture
     {
         return $this->pictureName;
     }
-
-    public function getPicturePath(): ?string
-    {
-        return 'pictures/' . $this->getPictureName();
-    }
 }
